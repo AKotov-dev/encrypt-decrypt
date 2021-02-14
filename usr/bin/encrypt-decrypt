@@ -1,0 +1,51 @@
+#!/bin/bash
+
+#GPG encrypting and decrypting files script
+#Author: Alex Kotov aka alex_q_2000 (C) 2021
+#License: GPLv3
+
+#Language select
+case $LANG in
+     ru_RU.UTF-8)
+          str=('Расшифровка файла' 'Расшифровка выполнена' 'Новый файл:' 'Удалить исходный файл' \
+          'и следы расшифровки?' 'Шифрование файла' 'Шифрование выполнено' 'и следы шифрования?')
+          ;;
+     *)
+          str=('Decrypt file' 'Decryption successful' 'New file:' 'Delete source file' \
+          'and the traces of decryption?' 'Encrypt file' 'Encryption successful' 'and the traces of encryption?')
+          ;;
+esac
+
+#File, Directory or nothing (for MATE ~/.config/caja/scripts)
+if [ -n "$1" -a "$(file --mime-type -b "$1")" != "inode/directory" ]; then
+
+#Extension input file
+if [ "${1##*.}" = "gpg" ]; then
+#Decrypt input file
+    pass="$(zenity --password --title="${str[0]}")"
+    [ "$?" -eq "0" -a -z "$pass" -o "$?" -ne "0" ] && exit
+
+    gpg --batch --yes -d --passphrase "$pass" -o "${1%.*}" "$1" | encrypt-decrypt-progress "${1%.*}" "d"
+
+    [ "${PIPESTATUS[0]}" -eq "0" ] && zenity --question --title="${str[1]}" \
+    --text="${str[2]} ${1%.*}\n\n${str[3]} $1\n${str[4]}" --no-wrap
+    else
+#Encrypt input file
+    pass="$(zenity --password --title="${str[5]}")"
+    [ "$?" -eq "0" -a -z "$pass" -o "$?" -ne "0" ] && exit
+
+    gpg --cipher-algo AES256 --digest-algo SHA512 --batch --yes --symmetric --passphrase "$pass" \
+    -o "$1.gpg" "$1" | encrypt-decrypt-progress "$1.gpg" "e"
+
+    [ "${PIPESTATUS[0]}" -eq "0" ] && zenity --question --title="${str[6]}" \
+    --text="${str[2]} $1.gpg\n\n${str[3]} $1\n${str[7]}" --no-wrap
+fi;
+
+#Clearing clipboard, recent files & Input file if operation is successful
+if [ "$?" -eq "0" ]; then
+    shred -u -z "$1" ~/.local/share/recently-used.xbel* | encrypt-decrypt-progress "" "c"
+    xsel --clipboard --clear
+fi;
+fi;
+
+exit 0;
