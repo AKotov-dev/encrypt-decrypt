@@ -13,3 +13,5 @@ The length of the encryption password is selected experimentally and depends on 
 In practice, this approach is very convenient for fast and reliable encryption of small files containing important, personal information.
 
 Made and tested in Mageia Linux-8.
+
+![](https://github.com/AKotov-dev/encrypt-decrypt/blob/main/ScreenShots/encrypt-decrypt1.png)  ![](https://github.com/AKotov-dev/encrypt-decrypt/blob/main/ScreenShots/encrypt-decrypt2.png)  ![](https://github.com/AKotov-dev/encrypt-decrypt/blob/main/ScreenShots/encrypt-decrypt3.png)  ![](https://github.com/AKotov-dev/encrypt-decrypt/blob/main/ScreenShots/encrypt-decrypt4.png)
