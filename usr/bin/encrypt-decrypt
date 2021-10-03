@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#GPG encrypting and decrypting files script
+#GPG encrypting and decrypting files/folders script
 #Author: Alex Kotov aka alex_q_2000 (C) 2021
 #License: GPLv3
 
@@ -16,8 +16,10 @@ case $LANG in
           ;;
 esac
 
-#File, Directory or nothing (for MATE ~/.config/caja/scripts)
-if [ -n "$1" -a "$(file --mime-type -b "$1")" != "inode/directory" ]; then
+#Work directory for tar
+cd "$(dirname "$1")"
+#Filename/Directory only
+fname="$(basename "$1")"
 
 #Extension input file
 if [ "${1##*.}" = "gpg" ]; then
@@ -25,27 +27,31 @@ if [ "${1##*.}" = "gpg" ]; then
     pass="$(zenity --password --title="${str[0]}")"
     [ "$?" -eq "0" -a -z "$pass" -o "$?" -ne "0" ] && exit
 
-    gpg --batch --yes -d --passphrase "$pass" -o "${1%.*}" "$1" | encrypt-decrypt-progress "${1%.*}" "d"
+    gpg --batch --yes -d --passphrase "$pass" "$fname" | tar -xf - | encrypt-decrypt-progress "${fname%.*}" "d"
 
     [ "${PIPESTATUS[0]}" -eq "0" ] && zenity --question --title="${str[1]}" \
-    --text="${str[2]} ${1%.*}\n\n${str[3]} $1\n${str[4]}" --no-wrap
-    else
+    --text="${str[2]} \"${fname%.*}\"\n\n${str[3]} \"$fname\"\n${str[4]}" --no-wrap
+	else
 #Encrypt input file
     pass="$(zenity --password --title="${str[5]}")"
     [ "$?" -eq "0" -a -z "$pass" -o "$?" -ne "0" ] && exit
 
-    gpg --cipher-algo AES256 --digest-algo SHA512 --batch --yes --symmetric --passphrase "$pass" \
-    -o "$1.gpg" "$1" | encrypt-decrypt-progress "$1.gpg" "e"
+    tar -cf - "$fname" | gpg --cipher-algo AES256 --digest-algo SHA512 --batch --yes --symmetric --passphrase "$pass" \
+    -o "$fname.gpg" | encrypt-decrypt-progress "$fname.gpg" "e"
 
     [ "${PIPESTATUS[0]}" -eq "0" ] && zenity --question --title="${str[6]}" \
-    --text="${str[2]} $1.gpg\n\n${str[3]} $1\n${str[7]}" --no-wrap
+    --text="${str[2]} \"$fname.gpg\"\n\n${str[3]} \"$fname\"\n${str[7]}" --no-wrap
 fi;
 
-#Clearing clipboard, recent files & Input file if operation is successful
+#Clearing clipboard, recent files & Input file/folder if operation is successful
 if [ "$?" -eq "0" ]; then
-    shred -u -z "$1" ~/.local/share/recently-used.xbel* | encrypt-decrypt-progress "" "c"
+    if [ -d "$fname" ]; then
+        find "$fname" -type f -exec shred -uz {} \; | encrypt-decrypt-progress "" "c";
+        rm -rf "$fname"
+    fi;
+
+    shred -uz "$fname" ~/.local/share/recently-used.xbel* | encrypt-decrypt-progress "" "c"
     xsel --clipboard --clear
-fi;
 fi;
 
 exit 0;

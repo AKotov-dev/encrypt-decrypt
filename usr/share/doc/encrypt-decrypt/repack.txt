@@ -1,48 +1,51 @@
-This repack.txt file was created automatically by RPMCreator v1.5
+This repack.txt file was created automatically by RPMCreator v1.7
 It contains the necessary information to recreation the program from the source code
 
 Information about the program:
 ---
 Name of program: encrypt-decrypt
-Version of program: 0.1
+Version of program: 0.2
 Program development tool: Shell
 Version of program development tool: unknown
-URL the sources of the author (32 bit): https://cloud.mail.ru/public/cJuL/7T8ZBx3g7
+URL the sources of the author (32 bit): https://github.com/AKotov-dev/encrypt-decrypt
 URL the sources of the author (64 bit): unknown
 
 Information about the rpm-package:
 ---
 Build method: Portable RPM
-Time stamp: 7-2-21 15:01:23
+Time stamp: 3-10-21 15:39:35
 
 Name: encrypt-decrypt
-Version: 0.1
-Release: 8.mrx8
+Version: 0.2
+Release: 1.mrx8
 Group: File tools
 License: GPLv3
 Maintainer: Alex Kotov
 Vendor: alex_q_2000 (C) 2021
-URL of the copy source codes: https://cloud.mail.ru/public/cJuL/7T8ZBx3g7
+URL of the copy source codes: hhttps://github.com/AKotov-dev/encrypt-decrypt
 
 Summary: Encrypt-Decrypt context menu for Nemo, PCManFM & Caja
 
 Description:
 ---
 The Encrypt-Decrypt items are created in the context menu of the Nemo, PCManFM & Caja file managers.
-Encrypted files get the extension *.gpg and are located in the location directory of the main file.
+Encrypted files/folders get the extension *.gpg and are located in the location directory of the main file.
 Decryption of the *.gpg file also occurs in this directory.
 ...
 More information: /usr/share/doc/package_name/repack.txt
 
 Package dependencies:
 ---
-gnupg2 zenity xsel
+gnupg2 zenity xsel tar
 
 Additionally information:
 ---
 The Encrypt-Decrypt items are created in the context menu of the Nemo, PCManFM & Caja file managers.
 Encrypted files get the extension *.gpg and are located in the location directory of the main file.
 Decryption of the *.gpg file also occurs in this directory.
+
+v0.2-1
++шифрование папок
 
 v0.1-8
 +замена wipe на shred

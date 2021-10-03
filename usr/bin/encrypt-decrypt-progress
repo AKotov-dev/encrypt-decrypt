@@ -30,6 +30,7 @@ zenity --progress --title "$title" --pulsate --auto-close
 
 if [ "$?" != "0" ]; then
     rm -f "$1"
+    killall tar
     killall gpg
     killall shred
     killall encrypt-decrypt
