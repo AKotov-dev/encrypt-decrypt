@@ -1,4 +1,4 @@
-**encrypt-decrypt** - a package of gpg file/folder encryption scripts for the Nemo, PCManFM, and Caja context menus
+**encrypt-decrypt** - a package of gpg files/folders encryption scripts for the Nemo, PCManFM, and Caja context menus
 
 Dependencies: `zenity gnupg2 (gpg) xsel tar`
 
