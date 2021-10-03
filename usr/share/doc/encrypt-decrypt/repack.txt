@@ -1,0 +1,78 @@
+This repack.txt file was created automatically by RPMCreator v1.7
+It contains the necessary information to recreation the program from the source code
+
+Information about the program:
+---
+Name of program: encrypt-decrypt
+Version of program: 0.2
+Program development tool: Shell
+Version of program development tool: unknown
+URL the sources of the author (32 bit): https://github.com/AKotov-dev/encrypt-decrypt
+URL the sources of the author (64 bit): unknown
+
+Information about the rpm-package:
+---
+Build method: Portable RPM
+Time stamp: 3-10-21 15:39:35
+
+Name: encrypt-decrypt
+Version: 0.2
+Release: 1.mrx8
+Group: File tools
+License: GPLv3
+Maintainer: Alex Kotov
+Vendor: alex_q_2000 (C) 2021
+URL of the copy source codes: hhttps://github.com/AKotov-dev/encrypt-decrypt
+
+Summary: Encrypt-Decrypt context menu for Nemo, PCManFM & Caja
+
+Description:
+---
+The Encrypt-Decrypt items are created in the context menu of the Nemo, PCManFM & Caja file managers.
+Encrypted files/folders get the extension *.gpg and are located in the location directory of the main file.
+Decryption of the *.gpg file also occurs in this directory.
+...
+More information: /usr/share/doc/package_name/repack.txt
+
+Package dependencies:
+---
+gnupg2 zenity xsel tar
+
+Additionally information:
+---
+The Encrypt-Decrypt items are created in the context menu of the Nemo, PCManFM & Caja file managers.
+Encrypted files get the extension *.gpg and are located in the location directory of the main file.
+Decryption of the *.gpg file also occurs in this directory.
+
+v0.2-1
++шифрование папок
+
+v0.1-8
++замена wipe на shred
++скрипт прогресса /usr/bin/encrypt-decrypt-progress
++индикация прогресса шифровки/расшифровки и очистки входных файлов (shred)
+
+v1.0-7
++удаление "недавних" и "входных" файлов без возможности восстановления (wipe)
+
+v0.1-6
++мультиязычность [RU/EN]
+=финальная версия
+
+v0.1-5
++запрос очистки событий и файлов после удачного завершения шифрования/расшифровки
++иконка контекстного меню
+
+v0.1-4
++адаптация скрипта для MATE
++установка контекстного меню через "Меню-Программы-Системные-Caja: меню Encrypt-Decrypt"
+=создаётся cсылка в контекстном меню "Сценарии->Encrypt-Decrypt"
+
+v0.1-3
++переименование в encrypt-decrypt
++контекстное меню PCManFM (LXDE & LXQt, требуется relogin)
+=поддерживаются ф/м Nemo и PCManFM
+
+v0.1-2 - очистка буфера обмена, "недавних" файлов и кеша парольной фразы
+v0.1-1 - 4 скрипта заменены на 2
+

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Caja: Encrypt-Decrypt menu
+Name[ru]=Caja: меню Encrypt-Decrypt
+Comment=Install Caja Encrypt-Decrypt context menu (Scripts)
+Comment[ru]=Установка контекстного меню Encrypt-Decrypt в Caja (Скрипты)
+Icon=encrypt-decrypt
+Exec=/bin/bash -c "ln -s /usr/bin/encrypt-decrypt ~/.config/caja/scripts/Encrypt-Decrypt; caja -q"
+Type=Application
+Categories=System;
+Terminal=false
