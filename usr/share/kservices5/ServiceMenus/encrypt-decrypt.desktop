@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Service
+Actions=EncryptDecrypt;
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin
+MimeType=application/octet-stream;inode/directory;
+X-KDE-Priority=TopLevel
+
+[Desktop Action EncryptDecrypt]
+Name=Encrypt-Decrypt
+Name[ru]=Зашифровать-Расшифровать
+Icon=encrypt-decrypt
+Exec=encrypt-decrypt "%F"

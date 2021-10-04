@@ -7,6 +7,6 @@ Profiles=on_file;
 
 [X-Action-Profile on_file]
 TryExec=encrypt-decrypt
-Exec=encrypt-decrypt %F
+Exec=encrypt-decrypt "%F"
 MimeTypes=all/all;
 SelectionCount=1

@@ -2,7 +2,7 @@
 
 Dependencies: `zenity gnupg2 (gpg) xsel tar`
 
-Creates the `Encrypt-Decrypt` item in the context menu of the Nemo, PCManFM, and Caja file managers (MATE - via the shortcut in the `System` menu).
+Creates the `Encrypt-Decrypt` item in the context menu of the Nemo, PCManFM, Dolphin and Caja file managers (MATE - via the shortcut in the `System` menu).
 
 Encrypted files/folders get the extension `*.gpg` and are created/overwritten in the location directory of the main file. Decrypted files/folders are created/overwritten in the same place. On request, removes traces of encryption/decryption: clears the clipboard, recent files, and the input file/folder without the possibility of recovery (the Gutman method). Starting from v0.1-8, there is an indication of the encryption and cleanup progress. Localization of RU/EN.
 

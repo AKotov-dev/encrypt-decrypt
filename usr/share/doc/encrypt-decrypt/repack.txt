@@ -13,7 +13,7 @@ URL the sources of the author (64 bit): unknown
 Information about the rpm-package:
 ---
 Build method: Portable RPM
-Time stamp: 3-10-21 15:39:35
+Time stamp: 4-10-21 09:36:45
 
 Name: encrypt-decrypt
 Version: 0.2
@@ -46,6 +46,7 @@ Decryption of the *.gpg file also occurs in this directory.
 
 v0.2-1
 +шифрование папок
++Dolphin action (Plasma PopUp Menu)
 
 v0.1-8
 +замена wipe на shred
