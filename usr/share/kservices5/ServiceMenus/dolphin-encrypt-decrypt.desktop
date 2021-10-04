@@ -9,4 +9,4 @@ X-KDE-Priority=TopLevel
 Name=Encrypt-Decrypt
 Name[ru]=Зашифровать-Расшифровать
 Icon=encrypt-decrypt
-Exec=encrypt-decrypt "%F"
+Exec=encrypt-decrypt %F

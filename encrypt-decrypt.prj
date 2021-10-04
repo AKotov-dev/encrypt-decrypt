@@ -11,7 +11,7 @@ release=1.mrx8
 group=File tools
 
 [DESCRIPTION]
-0=The Encrypt-Decrypt items are created in the context menu of the Nemo, PCManFM & Caja file managers.
+0=The Encrypt-Decrypt items are created in the context menu of the Nemo, PCManFM, Dolphin & Caja file managers.
 1=Encrypted files/folders get the extension *.gpg and are located in the location directory of the main file.
 2=Decryption of the *.gpg file also occurs in this directory.
 3=...
@@ -24,7 +24,7 @@ maintainer=Alex Kotov
 vendor=alex_q_2000 (C) 2021
 
 [SUMMARY]
-summary=Encrypt-Decrypt context menu for Nemo, PCManFM & Caja
+summary=Encrypt-Decrypt context menu for Nemo, PCManFM, Dolphin & Caja
 
 [URLCOPY]
 urlcopy=hhttps://github.com/AKotov-dev/encrypt-decrypt
@@ -55,7 +55,7 @@ deb=1
 4=/usr/share/file-manager/actions/pcmanfm-encrypt-decrypt.desktop
 5=/usr/share/icons/encrypt-decrypt.png
 6=/usr/share/applications/caja-encrypt-decrypt.desktop
-7=/usr/share/kservices5/ServiceMenus/encrypt-decrypt.desktop
+7=/usr/share/kservices5/ServiceMenus/dolphin-encrypt-decrypt.desktop
 
 [URL32]
 url32=https://github.com/AKotov-dev/encrypt-decrypt
