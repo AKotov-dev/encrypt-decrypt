@@ -1,10 +1,10 @@
 **encrypt-decrypt** - a package of gpg files/folders encryption scripts for the Nemo, PCManFM, Dolphin and Caja context menus
 
-Dependencies: `zenity gnupg2 xsel tar zstd wipe`
+Dependencies: `zenity gnupg2 xsel tar zstd`
 
 Creates the `Encrypt-Decrypt` item in the context menu of the Nemo, PCManFM, Dolphin and Caja file managers (MATE - via the shortcut in the `System` menu).
 
-Encrypted files/folders get the extension `*.gpg` and are created/overwritten in the location directory of the main file. Decrypted files/folders are created/overwritten in the same place. On request, removes traces of encryption/decryption: clears the clipboard, recent files, and the input file/folder without the possibility of recovery (wipe). Starting from v0.1-8, there is an indication of the encryption and cleanup progress. Localization of RU/EN.
+Encrypted files/folders get the extension `*.gpg` and are created/overwritten in the location directory of the main file. Decrypted files/folders are created/overwritten in the same place. On request, removes traces of encryption/decryption: clears the clipboard, recent files, and the input file/folder without the possibility of recovery (shred). Starting from v0.1-8, there is an indication of the encryption and cleanup progress. Localization of RU/EN.
 
 **Important:** You can use, for example, one or more paragraphs from any book as a passphrase.
 

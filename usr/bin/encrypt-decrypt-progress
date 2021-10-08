@@ -28,12 +28,6 @@ esac
 
 zenity --progress --title "$title" --pulsate --auto-close
 
-if [ "$?" != "0" ]; then
-    killall zstd
-    killall tar
-    killall gpg
-    killall wipe
-    killall encrypt-decrypt
-fi;
+[ "$?" != "0" ] && killall zstd tar gpg find shred encrypt-decrypt
 
 exit 0;

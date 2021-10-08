@@ -13,7 +13,7 @@ URL the sources of the author (64 bit): unknown
 Information about the rpm-package:
 ---
 Build method: Portable RPM
-Time stamp: 8-10-21 16:29:17
+Time stamp: 8-10-21 19:03:21
 
 Name: encrypt-decrypt
 Version: 1.0
@@ -36,7 +36,7 @@ More information: /usr/share/doc/package_name/repack.txt
 
 Package dependencies:
 ---
-gnupg2 zenity xsel tar zstd wipe
+gnupg2 zenity xsel tar zstd
 
 Additionally information:
 ---
@@ -46,8 +46,6 @@ Decryption of the *.gpg file also occurs in this directory.
 
 v1.0.-0 - final release
 +zstd compression
-+wipe - securely erase files/folders
-+improving overall performance
 
 v0.2-1
 +шифрование папок
