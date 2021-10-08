@@ -46,9 +46,9 @@ fi;
 #Clearing clipboard, recent files & Input file/folder if operation is successful
 if [ "$?" -eq "0" ]; then
     if [ -d "$fname" ]; then
-        wipe -rfs "$fname" | encrypt-decrypt-progress "" "c"
+       wipe -rfs "$fname" | encrypt-decrypt-progress "" "c"
 	else
-        wipe -fs "$fname" ~/.local/share/recently-used.xbel* | encrypt-decrypt-progress "" "c"
+       wipe -fs "$fname" ~/.local/share/recently-used.xbel* | encrypt-decrypt-progress "" "c"
     fi;
     xsel --clipboard --clear
 fi;
