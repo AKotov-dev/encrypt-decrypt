@@ -1,6 +1,6 @@
 **encrypt-decrypt** - a package of gpg files/folders encryption scripts for the Nemo, PCManFM, Dolphin and Caja context menus
 
-Dependencies: `zenity gnupg2 xsel tar zstd`
+Dependencies: `zenity gnupg2 xsel tar wipe zstd`
 
 Creates the `Encrypt-Decrypt` item in the context menu of the Nemo, PCManFM, Dolphin and Caja file managers (MATE - via the shortcut in the `System` menu).
 

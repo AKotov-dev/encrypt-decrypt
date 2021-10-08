@@ -29,10 +29,10 @@ esac
 zenity --progress --title "$title" --pulsate --auto-close
 
 if [ "$?" != "0" ]; then
-    rm -f "$1"
+    killall zstd
     killall tar
     killall gpg
-    killall shred
+    killall wipe
     killall encrypt-decrypt
 fi;
 
