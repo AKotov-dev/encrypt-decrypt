@@ -45,13 +45,14 @@ fi;
 
 #Clearing clipboard, recent files & Input file/folder if operation is successful
 if [ "$?" -eq "0" ]; then
+xsel --clipboard --clear
+
     if [ -d "$fname" ]; then
         find "$fname" -type f -exec shred -uz {} \; | encrypt-decrypt-progress "" "c";
         rm -rf "$fname"
     fi;
 
-    shred -uz "$fname" ~/.local/share/recently-used.xbel* | encrypt-decrypt-progress "" "c"
-    xsel --clipboard --clear
+shred -uz "$fname" ~/.local/share/recently-used.xbel* | encrypt-decrypt-progress "" "c"
 fi;
 
 exit 0;
