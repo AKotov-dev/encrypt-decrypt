@@ -13,7 +13,7 @@ URL the sources of the author (64 bit): unknown
 Information about the rpm-package:
 ---
 Build method: Portable RPM
-Time stamp: 8-10-21 19:03:21
+Time stamp: 9-10-21 05:15:51
 
 Name: encrypt-decrypt
 Version: 1.0
@@ -40,11 +40,12 @@ gnupg2 zenity xsel tar zstd
 
 Additionally information:
 ---
-The Encrypt-Decrypt items are created in the context menu of the Nemo, PCManFM & Caja file managers.
-Encrypted files get the extension *.gpg and are located in the location directory of the main file.
+The Encrypt-Decrypt items are created in the context menu of the Nemo, PCManFM, Dolphin & Caja file managers.
+Encrypted files/folders get the extension *.gpg and are located in the location directory of the main file.
 Decryption of the *.gpg file also occurs in this directory.
 
-v1.0.-0 - final release
+v1.0-0
+-final release
 +zstd compression
 
 v0.2-1
