@@ -9,5 +9,5 @@ Exec=encrypt-decrypt %F
 Selection=s
 Extensions=any;
 #Quote=double
-#EscapeSpaces=true
+EscapeSpaces=true
 Dependencies=zenity
