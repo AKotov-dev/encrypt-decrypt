@@ -30,4 +30,4 @@ zenity --progress --title "$title" --pulsate --auto-close
 
 [ "$?" != "0" ] && killall zstd tar gpg find shred encrypt-decrypt
 
-exit 0;
+exit 0

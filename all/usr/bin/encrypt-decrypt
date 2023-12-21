@@ -43,16 +43,17 @@ if [ "${1##*.}" = "gpg" ]; then
     --text="${str[2]} \"$fname.gpg\"\n\n${str[3]} \"$fname\"\n${str[7]}" --no-wrap
 fi;
 
-#Clearing clipboard, recent files & Input file/folder if operation is successful
+#Clearing clipboard, recent files, thumbnails & Input file/folder if operation is successful
 if [ "$?" -eq "0" ]; then
 xsel --clipboard --clear
 
     if [ -d "$fname" ]; then
-        find "$fname" -type f -exec shred -uz {} \; | encrypt-decrypt-progress "" "c";
+        find "$fname" -type f -exec shred -n 3 -u -z {} \; | encrypt-decrypt-progress "" "c"
         rm -rf "$fname"
     fi;
 
-shred -uz "$fname" ~/.local/share/recently-used.xbel* | encrypt-decrypt-progress "" "c"
+shred -n 3 -u -z "$fname" ~/.local/share/recently-used.xbel* | encrypt-decrypt-progress "" "c"
+find ~/.cache/thumbnails -type f -exec shred -n 3 -u -z {} \; | encrypt-decrypt-progress "" "c"
 fi;
 
-exit 0;
+exit 0
